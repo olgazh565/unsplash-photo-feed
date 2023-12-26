@@ -1,0 +1,147 @@
+.fotoContainer {
+  width: 100%;
+  height: calc(100vh - 120px);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 15px;
+
+  @media (max-width: 800px) {
+    max-height: calc(100vh - 170px);    
+  }
+}
+
+.image {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 240px);
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+  margin-bottom: auto;
+  cursor: zoom-in;
+  align-self: start;
+  align-self: self-start;
+  display: block;
+
+  @media (max-width: 800px) {
+    max-height: calc(100vh - 235px);    
+  }
+}
+
+.description {
+  margin-bottom: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  gap: 5px;
+  align-items: end;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    .userName {
+      color: rgb(98, 153, 153);
+    }
+  }
+}
+
+.avatar {
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.userName {
+  transition: all 0.2s ease-in-out;
+  
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+.fotoInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.likeBtnFoto {
+  border: 1px solid;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgb(241, 237, 237);
+    background-color: rgb(226, 222, 222);
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+.date {
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+}
+
+.fillededLikeIcon{
+  transition: all 0.3s ease-in-out;
+}
+
+.outlinedLikeIcon{
+  transition: all 0.3s ease-in-out;
+}
+
+.arrowIcon {
+  transform: rotate(180deg);
+}
+
+.linkBack {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  gap: 5px;
+  background-color: lightgrey;
+  padding: 5px 10px;
+  border-radius: 4px;
+  opacity: 0.7;
+  transition: 0.2s ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.backText{
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}

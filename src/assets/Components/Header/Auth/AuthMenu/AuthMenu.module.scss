@@ -1,0 +1,31 @@
+.auth {
+  display: flex;
+  gap: 5px;
+  align-items: end;
+  padding: 0 10px;
+  border-radius: 4px;
+  transition: 0.2s ease-out;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+
+  &:hover, &:active, &:focus {
+    background-color: rgb(141, 193, 193);
+  }
+}
+
+.authImg {
+  border-radius: 50%;
+  border: solid 1px black;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.name {
+  text-decoration: none;
+  color: black;
+  text-transform: lowercase;
+  font-weight: 500;
+}

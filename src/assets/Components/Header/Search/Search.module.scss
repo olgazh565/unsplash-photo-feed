@@ -1,0 +1,44 @@
+.form {
+  position: relative;
+  margin-right: auto;
+  min-width: 500px;
+  grid-area: search;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    min-width: 250px;
+  }
+}
+
+.search {
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px 25px 8px 15px;
+
+  @media (max-width: 800px) {
+    padding: 10px 25px 10px 15px;
+    font-size: 16px;
+  }
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+.search::-webkit-search-cancel-button {
+  display: none;
+}
+
+.button {
+  color: var(--black);
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 0;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.36s ease-in-out;
+}
+

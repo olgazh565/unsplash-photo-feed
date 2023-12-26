@@ -1,0 +1,46 @@
+.authWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 5px;
+  grid-area: auth;
+  justify-self: right;
+  padding: 5px;
+
+  @media (max-width: 800px) {
+    gap: 5px;
+  }
+}
+
+.auth {
+  display: flex;
+  gap: 5px;
+  align-items: end;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+.authImg {
+  border-radius: 50%;
+  border: solid 1px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.logout {
+  // font-size: 0;
+  width: 30px;
+  height: 30px;
+
+  svg {
+    width: 30px;
+    height: 30px;  
+  }
+}
+
+.login {
+  font-size: 0;
+}

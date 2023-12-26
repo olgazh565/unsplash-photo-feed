@@ -1,0 +1,36 @@
+.header {
+  padding: 15px 0;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  width: 100vw;
+  background-color: rgb(168, 210, 210);
+  min-height: 73px;
+
+  @media (max-width: 800px) {
+    min-height: 50px;
+  }
+
+  @media (max-width: 500px) {
+    min-height: 30px;
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-areas: 'logo search auth';
+  align-items: end;
+  gap: 50px;
+
+  @media (max-width: 900px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: max-content 1fr;
+    grid-template-areas: 
+    'logo auth'
+    'search search';
+  }
+}
