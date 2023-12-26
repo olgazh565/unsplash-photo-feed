@@ -26,6 +26,9 @@ export const List = () => {
     isLikesPage ? useSelector(state => state.userLikes.total) :
       useSelector(state => state.fotos.total);
   const search = useSelector(state => state.fotos.search);
+  console.log('search: ', search);
+  console.log('status: ', status);
+
 
   useEffect(() => {
     if (!endList.current) return;
@@ -34,16 +37,12 @@ export const List = () => {
 
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        switch (true) {
-          case search:
-            dispatch(fetchFotos(search));
-            break;
-          case isLikesPage:
-            dispatch(fetchUserLikes());
-            break;
-          default:
-            dispatch(fetchFotos());
-            break;
+        if (search) {
+          dispatch(fetchFotos(search));
+        } else if (isLikesPage) {
+          dispatch(fetchUserLikes());
+        } else {
+          dispatch(fetchFotos());
         }
       }
     }, {
@@ -102,16 +101,12 @@ export const List = () => {
                 className={style.btn}
                 type='button'
                 onClick={() => {
-                  switch (true) {
-                    case search:
-                      dispatch(fetchFotos(search));
-                      break;
-                    case isLikesPage:
-                      dispatch(fetchUserLikes());
-                      break;
-                    default:
-                      dispatch(fetchFotos());
-                      break;
+                  if (search) {
+                    dispatch(fetchFotos(search));
+                  } else if (isLikesPage) {
+                    dispatch(fetchUserLikes());
+                  } else {
+                    dispatch(fetchFotos());
                   }
                 }}
               >

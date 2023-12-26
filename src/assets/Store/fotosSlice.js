@@ -78,8 +78,6 @@ const fotosSlice = createSlice({
           [...state.fotos, ...action.payload.data];
         state.total = action.payload.total;
         state.page += 1;
-
-        // state.totalPages = action.payload.search && action.payload.totalPages;
       })
       .addCase(fetchFotos.rejected, (state, action) => {
         state.status = 'error';

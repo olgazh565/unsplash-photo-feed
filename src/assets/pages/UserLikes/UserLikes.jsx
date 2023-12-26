@@ -5,7 +5,7 @@ import {List} from '../../Components/Main/List/List';
 
 export const UserLikes = () => {
   const dispatch = useDispatch();
-  const {status} = useSelector(state => state.userLikes);
+  const {fotos, status, error} = useSelector(state => state.userLikes);
   const {token} = useSelector(state => state.token);
 
   useEffect(() => {
@@ -15,6 +15,13 @@ export const UserLikes = () => {
   }, [status, token]);
 
   return (
-    <List />
+    <>
+      {status === 'error' && `Ошибка: ${error}`}
+
+      {(status === 'Loaded' && fotos.length === 0) && 'Список пуст'}
+
+      <List />
+    </>
+
   );
 };
