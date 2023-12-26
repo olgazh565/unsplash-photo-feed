@@ -26,9 +26,6 @@ export const List = () => {
     isLikesPage ? useSelector(state => state.userLikes.total) :
       useSelector(state => state.fotos.total);
   const search = useSelector(state => state.fotos.search);
-  console.log('search: ', search);
-  console.log('status: ', status);
-
 
   useEffect(() => {
     if (!endList.current) return;
