@@ -62,6 +62,7 @@ const fotosSlice = createSlice({
       state.fotos = [];
       state.status = '';
       state.page = 1;
+      state.search = '';
     },
   },
   extraReducers: (builder) => {
