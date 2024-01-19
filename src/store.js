@@ -3,8 +3,8 @@ import tokenReducer, {tokenMiddleware} from './assets/store/tokenSlice';
 import authReducer from './assets/store/authSlice';
 import fotosReducer from './assets/store/fotosSlice';
 import singleFotoReducer from './assets/store/singleFotoSlice';
-import likeSlice from './assets/store/likeSlice';
-import userLikesSlice from './assets/store/userLikesSlice';
+import likeReducer from './assets/store/likeSlice';
+import userLikesReducer from './assets/store/userLikesSlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,8 +12,8 @@ export const store = configureStore({
     auth: authReducer,
     fotos: fotosReducer,
     singleFoto: singleFotoReducer,
-    like: likeSlice,
-    userLikes: userLikesSlice,
+    like: likeReducer,
+    userLikes: userLikesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(tokenMiddleware),
