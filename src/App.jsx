@@ -1,10 +1,10 @@
 import {useDispatch} from 'react-redux';
-import {Header} from './assets/Components/Header/Header';
-import {getAuthCode} from './assets/api/auth';
+import {Header} from './Components/Header/Header';
+import {getAuthCode} from './api/auth';
 import {useEffect} from 'react';
 import {Route, Routes} from 'react-router-dom';
-import {Main} from './assets/Components/Main/Main';
-import {fetchToken} from './assets/store/tokenSlice';
+import {Main} from './Components/Main/Main';
+import {fetchToken} from './store/tokenSlice';
 
 const App = () => {
   const dispatch = useDispatch();

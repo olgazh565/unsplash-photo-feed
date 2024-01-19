@@ -1,10 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
-import authReducer from './assets/store/authSlice';
-import fotosReducer from './assets/store/fotosSlice';
-import singleFotoReducer from './assets/store/singleFotoSlice';
-import likeReducer from './assets/store/likeSlice';
-import userLikesReducer from './assets/store/userLikesSlice';
-import tokenReducer, {tokenMiddleware} from './assets/store/tokenSlice';
+import authReducer from './store/authSlice';
+import fotosReducer from './store/fotosSlice';
+import singleFotoReducer from './store/singleFotoSlice';
+import likeReducer from './store/likeSlice';
+import userLikesReducer from './store/userLikesSlice';
+import tokenReducer, {tokenMiddleware} from './store/tokenSlice';
 
 export const store = configureStore({
   reducer: {
