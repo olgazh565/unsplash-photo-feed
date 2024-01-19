@@ -30,11 +30,10 @@ export const fetchSingleFoto = createAsyncThunk(
       });
   });
 
-export const singleFotoSlice = createSlice({
+const singleFotoSlice = createSlice({
   name: 'singleFoto',
   initialState,
   reducers: {
-
   },
   extraReducers: (builder) => {
     builder
