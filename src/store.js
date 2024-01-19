@@ -17,4 +17,5 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(tokenMiddleware),
+  devTools: import.meta.env.DEV,
 });

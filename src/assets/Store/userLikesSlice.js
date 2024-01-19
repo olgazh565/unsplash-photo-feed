@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
-import {URL_API, USER} from '../api/const';
+import {URL_API} from '../api/const';
 import axios from 'axios';
 
 const initialState = {
@@ -15,10 +15,11 @@ export const fetchUserLikes = createAsyncThunk(
   (_, {getState}) => {
     const token = getState().token.token;
     const page = getState().userLikes.page;
+    const user = getState().auth.auth.name;
 
     if (!token) return;
 
-    return axios(`${URL_API}/users/${USER}/likes?page=${page}&per_page=20&order_by=latest`, {
+    return axios(`${URL_API}/users/${user}/likes?page=${page}&per_page=20&order_by=latest`, {
       headers: {
         'Accept-Version': 'v1',
         'Authorization': `Bearer ${token}`

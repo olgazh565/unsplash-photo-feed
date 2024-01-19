@@ -54,8 +54,9 @@ export const List = () => {
   }, [endList.current, status, total]);
 
   const breakpointColumnsObj = {
-    default: 4,
-    800: 3,
+    default: 5,
+    1100: 4,
+    900: 3,
     500: 2,
   };
 

@@ -4,14 +4,14 @@ import MenuItem from '@mui/material/MenuItem';
 import {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import {USER} from '../../../../api/const';
 import {resetFotosState} from '../../../../store/fotosSlice';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 export const AuthMenu = ({img, name}) => {
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const userName = useSelector(state => state.auth.auth.name);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -46,7 +46,7 @@ export const AuthMenu = ({img, name}) => {
       >
         <MenuItem onClick={handleClose}>
           <a
-            href={`https://unsplash.com/@${USER}`}
+            href={`https://unsplash.com/@${userName}`}
             target='_blank'
             rel='noreferrer'
           >

@@ -1,7 +1,6 @@
 import style from './FotoItem.module.scss';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import {formatDate} from '../../../../utils/formatData';
 import {LikeBtn} from '../../../../UI/LikeBtn/LikeBtn';
 
 export const FotoItem = ({data}) => {
@@ -9,7 +8,6 @@ export const FotoItem = ({data}) => {
     id,
     description,
     likes: likesFotosList,
-    created_at: createdAt,
     user: {username},
     user: {profile_image: {small: userAvatar}},
     user: {links: {html: userLink}},
@@ -57,10 +55,6 @@ export const FotoItem = ({data}) => {
           color='white'
         />
       </a>
-
-      <p className={style.date}>
-        {formatDate(createdAt)}
-      </p>
     </div>
   );
 };

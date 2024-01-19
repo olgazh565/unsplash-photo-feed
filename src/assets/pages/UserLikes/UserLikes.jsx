@@ -6,20 +6,25 @@ import {List} from '../../Components/Main/List/List';
 export const UserLikes = () => {
   const dispatch = useDispatch();
   const {fotos, status, error} = useSelector(state => state.userLikes);
-  const {token} = useSelector(state => state.token);
+  const {auth,
+    status: authStatus,
+    error: authError
+  } = useSelector(state => state.auth);
 
   useEffect(() => {
-    if (status) return;
+    if (status || !auth.name) return;
 
     dispatch(fetchUserLikes());
-  }, [status, token]);
+  }, [status, auth.name]);
 
   return (
     <>
-      {status === 'error' && `Ошибка: ${error}`}
-
-      {(status === 'Loaded' && fotos.length === 0) && 'Список пуст'}
-
+      {(status === 'error' || authStatus === 'error') &&
+        `Ошибка: ${error || authError}`
+      }
+      {(status === 'Loaded' && fotos.length === 0) &&
+        'Список пуст'
+      }
       <List />
     </>
 

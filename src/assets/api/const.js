@@ -6,4 +6,3 @@ export const SCOPE = 'public read_user read_photos write_likes';
 export const URL_AUTH_START = 'https://unsplash.com/oauth/authorize?';
 export const URL_AUTH_TOKEN = 'https://unsplash.com/oauth/token?';
 export const URL_API = 'https://api.unsplash.com';
-export const USER = 'olgazh565';
